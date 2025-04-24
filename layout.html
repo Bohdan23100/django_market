@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block css %}{% endblock %}
+    <title>{%block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">markeplace</a>
+        <div class="nav_search">
+          <nav class="nav">
+                <a href="index.html" class="selected"><i class="fa-solid fa-house"></i></a>
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="categories.html"><i class="fa-solid fa-align-left"></i></a>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput"/>
+                </div>
+          </nav>
+        </div>
+
+        <div class="user_btns">
+            <a><i class="fa-solid fa-sun"></i></a>
+            <a href="register.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    {% block content %}
+
+
+    {% endblock %}
+
+    <footer>
+        <h2>Bogdan</h2>
+        <h3>gmail:bogdangajdukevic@gmail.com</h3>
+    </footer>
+</body>
+</html>
