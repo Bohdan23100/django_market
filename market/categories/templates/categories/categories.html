@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+{% endblock %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+    <main><div class="name">
+            <h1>Categories</h1>
+        </div>
+        <div class="categories_container">
+            {% for category in categories %}
+            <a class="category" href="{% url 'main' category.id %}">
+                <i class="{{ category.icon }}"></i>
+                <h1>{{ category.name }}</h1>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

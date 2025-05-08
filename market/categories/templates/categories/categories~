@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="src/css/categories.css">
+{% endblock %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+
+
+
+    <main>
+        <div class="name">
+            <h1>Categories</h1>
+        </div>
+        <div class="categories_container">
+            <div class="category">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h1>Phones</h1>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-laptop"></i>
+                <h1>Laptops</h1>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-photo-film"></i>
+                <h1>Camera</h1>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-shoe-prints"></i>
+                <h1>Shoes</h1>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-shirt"></i>
+                <h1>Clothes</h1>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <h1>Accessories</h1>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-guitar"></i>
+                <h1>Music</h1>
+            </div>
+        </div>
+    </main>
+{% endblock %}

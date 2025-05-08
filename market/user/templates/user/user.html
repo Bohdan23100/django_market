@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+{% block title %}User{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="user">
+            <div class="user_img">
+                <i class="fa-solid fa-user-secret"></i>
+            </div>
+
+            <h1>Username</h1>
+            <h2>Email: user@example.com</h2>
+            <h3>Phone: +380 99 999 99 99</h3>
+            <h3>Address: Ukraine. Kyiv, 10</h3>
+
+            <div class="btns_user">
+                <a class="btn_update">Змінити дані</a>
+                <a class="btn_logout">Вийти з акаунта</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

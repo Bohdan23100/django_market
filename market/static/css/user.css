@@ -1,0 +1,67 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blocks-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 50px auto 5px auto;
+    max-width: 700px;
+}
+
+.user_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-btns);
+    border-radius: 20px;
+    padding: 5px;
+    width: 25%;
+    height: 150px;
+    font-size: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.btns_user {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.btns_user a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: scale 0.3s ease;
+}
+
+.btns_user a:hover {
+    scale: 0.95;
+}
+
+.btn_update {
+    background-color: var(--accent-color);
+}
+
+.btn_logout {
+    background-color: red;
+}
+
+h1, h2 ,h3 {
+    color: var(--main-text-color);
+}

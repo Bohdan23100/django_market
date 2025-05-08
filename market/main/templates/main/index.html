@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block title %}Market{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="product-grid">
+            {% if products %}
+                {% for product in products %}
+                    <div class="product">
+                        <a href="{% url 'product' product.id %}">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <h3>{{ product.name }}</h3>
+                        <h2>{{ product.price }}</h2>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h1>There are no products</h1>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

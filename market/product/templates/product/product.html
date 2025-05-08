@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="product_info">
+            <div class="main_data">
+                <div class="product_imgs">
+                    <img src="{{ product.image.url }}" alt="product" class="main_img">
+                    <div class="mini_imgs">
+                        <img src="{{ product.image.url }}" alt="product">
+                        <img src="{{ product.image.url }}" alt="product">
+                        <img src="{{ product.image.url }}" alt="product">
+                    </div>
+                </div>
+                <div class="buy_seller">
+                    <div class="product_buy">
+                        <p>{{ product.created_at }}</p>
+                        <h2>{{ product.name }}</h2>
+                        <h3>{{ product.price }}</h3>
+                        <a href="{% url 'cart' %}" class="btn">Buy now</a>
+                    </div>
+                    <div class="seller">
+                        <h1>Seller</h1>
+                        <span class="seller_info">
+                            <i class="fa-solid fa-user"></i>
+                            <h2>{{ product.user.name }}</h2>
+                        </span>
+                        <h2>{{ product.user.email }}</h2>
+                        <h2>+{{ product.user.phone }}</h2>
+                        <h2>{{ product.user.address }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <h1>Description</h1>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

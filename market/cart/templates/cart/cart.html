@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="cart">
+            <h1>Your Cart</h1>
+            <div class="cart_item">
+                <img src="{% static 'img/product/pexels-mikebirdy-112460.jpg' %}" alt="product">
+                <h2>Product weqrwqerwqerqwerqwr</h2>
+                <h3>Price</h3>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

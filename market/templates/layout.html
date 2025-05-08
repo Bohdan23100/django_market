@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block css %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/4933a200f3.js" crossorigin="anonymous"></script>
+    <title>{%block title %}{% endblock %}</title>
+</head>
+<body>
+        <header>
+        <a href="{% url 'index' %}" class="logo">marketplace</a>
+        <div class="nav_search">
+          <nav class="nav">
+                <a href="{% url 'index' %}" class="{% if request.resolver_match.view_name == 'index' or request.resolver_match.view_name == 'main' %}selected{% endif %}"><i class="fa-solid fa-house"></i></a>
+                <a href="{% url 'cart' %}" class="{% if request.resolver_match.view_name == 'cart' %}selected{% endif %}"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="{% url 'categories' %}" class="{% if request.resolver_match.view_name == 'categories' %}selected{% endif %}"><i class="fa-solid fa-align-left"></i></a>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput"/>
+                </div>
+          </nav>
+        </div>
+
+        <div class="user_btns">
+            <a><i class="fa-solid fa-sun" id="toggle_theme"></i></a>
+            <a href="{% url 'user' %}"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    {% block content %}
+
+
+    {% endblock %}
+
+    <footer>
+        <h2>Bogdan</h2>
+        <h3>gmail:bogdangajdukevic@gmail.com</h3>
+    </footer>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
