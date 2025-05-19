@@ -12,13 +12,29 @@
                 <i class="fa-solid fa-user-secret"></i>
             </div>
 
-            <h1>Username</h1>
-            <h2>Email: user@example.com</h2>
-            <h3>Phone: +380 99 999 99 99</h3>
-            <h3>Address: Ukraine. Kyiv, 10</h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                <h1>{{first_name}}</h1>
+                <h1>{{last_name}}</h1>
+                <h2>Email: {{email}}</h2>
+                <div class="input_row">
+                    <div class="input_group">
+                        <label for="phone">Phone number</label>
+                        <input type="text" id="phone" name="phone" placeholder="{{user_data.phone}}">
+                    </div>
+                    <div class="input_group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="{{user_data.address}}">
+                    </div>
+                </div>
+                <button type="submit" name="btn_update" class="btn_update" value="clicked">Змінити дані</button>
+
+            </form>
+
 
             <div class="btns_user">
-                <a class="btn_update">Змінити дані</a>
+                <a href="{% url 'user_products' %}" class="btn_user_orders">Мої товари</a>
+                <a href="{% url 'add_product' %}" class="btn_add_product_add">Додати товар</a>
                 <a class="btn_logout">Вийти з акаунта</a>
             </div>
         </div>

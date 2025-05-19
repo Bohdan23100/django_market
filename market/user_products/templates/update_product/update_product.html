@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="main-container">
+        <form
+            action="{% url 'update_product_req' %}"
+            method="post"
+            enctype="multipart/form-data"
+            class="form-container"
+        >
+            {% csrf_token %}
+
+            <h2 class="form-title">Update a New Product</h2>
+
+            {% if error %}
+                <div class="form-error">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="id" class="form-label">Product id</label>
+                <input type="text" id="id" name="id" placeholder="2495672" class="form-input" value="{{ product.id }}" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="name" class="form-label">Product Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. iPhone 15" class="form-input" value="{{ product.name }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price" class="form-label">Price (€)</label>
+                <input type="number" step="0.01" id="price" name="price" placeholder="e.g. 999" class="form-input" value="{{ product.price }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" id="description" name="description" placeholder="e.g. Brand new in box" class="form-input" value="{{ product.description }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category" class="form-label">Category</label>
+                <select id="category" name="category" class="form-input">
+                    {% for cat in categories %}
+                        {% if cat.id == product.category.id %}
+                            <option value="{{ cat.id }}" selected>{{ cat.name }}</option>
+                        {% else %}
+                            <option value="{{ cat.id }}">{{ cat.name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <img src="{{ product.image.url }}" alt="product">
+                <label for="image" class="form-label">Product Image</label>
+                <input type="file" id="image" name="image" accept="image/*" class="form-file" value="{{ product.image.url }}" required>
+            </div>
+
+            <button type="submit" class="form-button">
+                    Update Product
+            </button>
+        </form>
+    </main>
+</body>
+</html>

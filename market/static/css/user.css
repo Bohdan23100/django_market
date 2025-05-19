@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    width: 80%;
 }
 
 .btns_user a {
@@ -48,6 +48,11 @@
     padding: 10px;
     border-radius: 10px;
     transition: scale 0.3s ease;
+    background-color: var(--background-btns);
+}
+
+.btn_logout {
+    color: #CC0A00;
 }
 
 .btns_user a:hover {
@@ -65,3 +70,64 @@
 h1, h2 ,h3 {
     color: var(--main-text-color);
 }
+
+.phone_address form {
+    display: flex;
+    flex-direction: row;
+}
+.phone_address {
+    display: flex;
+
+    padding: 10px 0;
+}
+
+.phone_address h3 {
+    width: 48%;
+    text-align: center;
+    margin: auto 0;
+    font-size: 18px;
+}
+
+.user input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--input-bg, white);
+    color: var(--main-text-color);
+
+}
+
+.user input[type="text"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+.input_row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input_group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--main-text-color);
+}
+
+.input_group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--input-bg, white);
+    color: var(--main-text-color);
+}
+

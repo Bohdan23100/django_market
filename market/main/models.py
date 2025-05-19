@@ -17,17 +17,6 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-
-# class User(models.Model):
-#     name = models.CharField(max_length=50)
-#     email = models.EmailField()
-#     password = models.CharField(max_length=50)
-#     phone = models.CharField(max_length=20)
-#     address = models.CharField(max_length=100)
-#
-#     def __str__(self):
-#         return self.name
-
 class Category(models.Model):
     icon = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
